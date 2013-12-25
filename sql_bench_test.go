@@ -23,23 +23,23 @@ import(
 // 	}
 // }
 
-func BenchmarkQueryAllSingleTagSegmented(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		QueryAllSingleTagSegmented()
-	}
-}
+// func BenchmarkQueryAllSingleTagSegmented(b *testing.B) {
+// 	for i := 0; i < b.N; i++ {
+// 		QueryAllSingleTagSegmented()
+// 	}
+// }
 
-func BenchmarkQueryAllSingleTagSegmentedDistinct(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		QueryAllSingleTagSegmentedDistinct()
-	}
-}
+// func BenchmarkQueryAllSingleTagSegmentedDistinct(b *testing.B) {
+// 	for i := 0; i < b.N; i++ {
+// 		QueryAllSingleTagSegmentedDistinct()
+// 	}
+// }
 
-func BenchmarkQueryAllSingleTagSegmentedGrouped(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		QueryAllSingleTagSegmentedGrouped()
-	}
-}
+// func BenchmarkQueryAllSingleTagSegmentedGrouped(b *testing.B) {
+// 	for i := 0; i < b.N; i++ {
+// 		QueryAllSingleTagSegmentedGrouped()
+// 	}
+// }
 
 // func BenchmarkQueryAllTwoTags(b *testing.B) {
 // 	for i := 0; i < b.N; i++ {
@@ -59,60 +59,124 @@ func BenchmarkQueryAllSingleTagSegmentedGrouped(b *testing.B) {
 // 	}
 // }
 
-func BenchmarkQueryAllTwoTagsSegmented(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		QueryAllTwoTagsSegmented()
-	}
-}
-
-func BenchmarkQueryAllTwoTagsSegmentedDistinct(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		QueryAllTwoTagsSegmentedDistinct()
-	}
-}
-
-func BenchmarkQueryAllTwoTagsSegmentedGrouped(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		QueryAllTwoTagsSegmentedGrouped()
-	}
-}
-
-
-// func BenchmarkQueryAllThreeTags(b *testing.B) {
+// func BenchmarkQueryAllTwoTagsSegmented(b *testing.B) {
 // 	for i := 0; i < b.N; i++ {
-// 		QueryAllThreeTags()
+// 		QueryAllTwoTagsSegmented()
 // 	}
 // }
 
-// func BenchmarkQueryAllThreeTagsDistinct(b *testing.B) {
+// func BenchmarkQueryAllTwoTagsSegmentedDistinct(b *testing.B) {
 // 	for i := 0; i < b.N; i++ {
-// 		QueryAllThreeTagsDistinct()
+// 		QueryAllTwoTagsSegmentedDistinct()
 // 	}
 // }
 
-// func BenchmarkQueryAllThreeTagsGrouped(b *testing.B) {
+// func BenchmarkQueryAllTwoTagsSegmentedGrouped(b *testing.B) {
 // 	for i := 0; i < b.N; i++ {
-// 		QueryAllThreeTagsGrouped()
+// 		QueryAllTwoTagsSegmentedGrouped()
 // 	}
 // }
 
-func BenchmarkQueryAllThreeTagsSegmented(b *testing.B) {
+
+// func BenchmarkQueryAllFourTags(b *testing.B) {
+// 	for i := 0; i < b.N; i++ {
+// 		QueryAllFourTags()
+// 	}
+// }
+
+// func BenchmarkQueryAllFourTagsDistinct(b *testing.B) {
+// 	for i := 0; i < b.N; i++ {
+// 		QueryAllFourTagsDistinct()
+// 	}
+// }
+
+// func BenchmarkQueryAllFourTagsGrouped(b *testing.B) {
+// 	for i := 0; i < b.N; i++ {
+// 		QueryAllFourTagsGrouped()
+// 	}
+// }
+
+func BenchmarkQueryAllFourTagsSegmented(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		QueryAllThreeTagsSegmented()
+		QueryAllFourTagsSegmented()
 	}
 }
 
-func BenchmarkQueryAllThreeTagsSegmentedDistinct(b *testing.B) {
+func BenchmarkQueryAllFourTagsSegmentedParallel10(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		QueryAllThreeTagsSegmentedDistinct()
+		QueryAllFourTagsSegmentedParallel10()
 	}
 }
 
-func BenchmarkQueryAllThreeTagsSegmentedGrouped(b *testing.B) {
+func BenchmarkQueryAllFourTagsSegmentedDistinct(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		QueryAllThreeTagsSegmentedGrouped()
+		QueryAllFourTagsSegmentedDistinct()
 	}
 }
+
+func BenchmarkQueryAllFourTagsSegmentedGrouped(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllFourTagsSegmentedGrouped()
+	}
+}
+
+func BenchmarkQueryAllFourTagsSegmentedGroupedParallel10(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllFourTagsSegmentedGroupedParallel10()
+	}
+}
+
+func BenchmarkQueryAllFourTagsTwoSegments(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllFourTagsTwoSegments()
+	}
+}
+
+func BenchmarkQueryAllFourTagsTwoSegmentsGrouped(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllFourTagsTwoSegmentsGrouped()
+	}
+}
+
+//
+
+func BenchmarkQueryAllFourTagsSharded(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllFourTagsSharded()
+	}
+}
+
+func BenchmarkQueryAllFourTagsShardedParallel10(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllFourTagsShardedParallel10()
+	}
+}
+
+func BenchmarkQueryAllFourTagsShardedDistinct(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllFourTagsShardedDistinct()
+	}
+}
+
+func BenchmarkQueryAllFourTagsShardedDistinctParallel10(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllFourTagsShardedDistinctParallel10()
+	}
+}
+
+func BenchmarkQueryAllFourTagsShardedGrouped(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllFourTagsShardedGrouped()
+	}
+}
+
+func BenchmarkQueryAllFourTagsShardedGroupedParallel10(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllFourTagsShardedGroupedParallel10()
+	}
+}
+
+//
 
 func BenchmarkQueryAllTenTagsSegmented(b *testing.B) {
 	for i := 0; i < b.N; i++ {
@@ -132,20 +196,20 @@ func BenchmarkQueryAllTenTagsSegmentedGrouped(b *testing.B) {
 	}
 }
 
-func BenchmarkQueryAllTenTagsSegmentedGroupedParallel2(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		QueryAllTagsSegmentedGroupedParallelX(2)
-	}
-}
-
 func BenchmarkQueryAllTenTagsSegmentedGroupedParallel10(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		QueryAllTagsSegmentedGroupedParallelX(10)
+		QueryAllTenTagsSegmentedGroupedParallel10()
 	}
 }
 
-func BenchmarkQueryAllTenTagsSegmentedGroupedParallel20(b *testing.B) {
+func BenchmarkQueryAllTenTagsTwoSegments(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		QueryAllTagsSegmentedGroupedParallelX(20)
+		QueryAllTenTagsTwoSegments()
+	}
+}
+
+func BenchmarkQueryAllTenTagsTwoSegmentsGrouped(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllTenTagsTwoSegmentsGrouped()
 	}
 }
