@@ -5,6 +5,7 @@ import (
 	"crypto/rand"
 	"database/sql"
 	"encoding/hex"
+	// "fmt"
 )
 
 //
@@ -79,8 +80,8 @@ func QueryAllFourTagsSegmented() {
 	Query("SELECT device_id FROM mobile_subscriptions WHERE tag_id IN(16,157,161,173) AND segment = '" + randomHex() + "'")
 }
 
-func QueryAllFourTagsSegmentedParallel10() {
-	QueryParallel(10, "SELECT device_id FROM mobile_subscriptions WHERE tag_id IN(16,157,161,173) AND segment = '" + randomHex() + "'")
+func QueryAllFourTagsSegmentedParallel(x int) {
+	QueryParallel(x, "SELECT device_id FROM mobile_subscriptions WHERE tag_id IN(16,157,161,173) AND segment = '" + randomHex() + "'")
 }
 
 func QueryAllFourTagsTwoSegments() {
@@ -95,8 +96,8 @@ func QueryAllFourTagsSegmentedGrouped() {
 	Query("SELECT device_id FROM mobile_subscriptions WHERE tag_id IN(16,157,161,173) AND segment = '" + randomHex() + "' GROUP BY device_id")
 }
 
-func QueryAllFourTagsSegmentedGroupedParallel10() {
-	QueryParallel(10, "SELECT device_id FROM mobile_subscriptions WHERE tag_id IN(16,157,161,173) AND segment = '" + randomHex() + "' GROUP BY device_id")
+func QueryAllFourTagsSegmentedGroupedParallel(x int) {
+	QueryParallel(x, "SELECT device_id FROM mobile_subscriptions WHERE tag_id IN(16,157,161,173) AND segment = '" + randomHex() + "' GROUP BY device_id")
 }
 
 func QueryAllFourTagsTwoSegmentsGrouped() {
@@ -109,30 +110,34 @@ func QueryAllFourTagsSharded() {
 	Query("SELECT device_id FROM mobile_subscriptions_3d WHERE tag_id IN(16,157,161,173)")
 }
 
-func QueryAllFourTagsShardedParallel10() {
-	QueryParallel(10, "SELECT device_id FROM mobile_subscriptions_3d WHERE tag_id IN(16,157,161,173)")
+func QueryAllFourTagsShardedParallel(x int) {
+	QueryParallel(x, "SELECT device_id FROM mobile_subscriptions_3d WHERE tag_id IN(16,157,161,173)")
 }
 
 func QueryAllFourTagsShardedDistinct() {
 	Query("SELECT DISTINCT device_id FROM mobile_subscriptions_3d WHERE tag_id IN(16,157,161,173)")
 }
 
-func QueryAllFourTagsShardedDistinctParallel10() {
-	QueryParallel(10, "SELECT DISTINCT device_id FROM mobile_subscriptions_3d WHERE tag_id IN(16,157,161,173)")
+func QueryAllFourTagsShardedDistinctParallel(x int) {
+	QueryParallel(x, "SELECT DISTINCT device_id FROM mobile_subscriptions_3d WHERE tag_id IN(16,157,161,173)")
 }
 
 func QueryAllFourTagsShardedGrouped() {
 	Query("SELECT device_id FROM mobile_subscriptions_3d WHERE tag_id IN(16,157,161,173) GROUP BY device_id")
 }
 
-func QueryAllFourTagsShardedGroupedParallel10() {
-	QueryParallel(10, "SELECT device_id FROM mobile_subscriptions_3d WHERE tag_id IN(16,157,161,173) GROUP BY device_id")
+func QueryAllFourTagsShardedGroupedParallel(x int) {
+	QueryParallel(x, "SELECT device_id FROM mobile_subscriptions_3d WHERE tag_id IN(16,157,161,173) GROUP BY device_id")
 }
 
 //
 
 func QueryAllTenTagsSegmented() {
 	Query("SELECT device_id FROM mobile_subscriptions WHERE tag_id IN(16,18,19,20,24,84,157,160,161,173) AND segment = '" + randomHex() + "'")
+}
+
+func QueryAllTenTagsSegmentedParallel(x int) {
+	QueryParallel(x, "SELECT device_id FROM mobile_subscriptions WHERE tag_id IN(16,18,19,20,24,84,157,160,161,173) AND segment = '" + randomHex() + "'")
 }
 
 func QueryAllTenTagsTwoSegments() {
@@ -147,12 +152,34 @@ func QueryAllTenTagsSegmentedGrouped() {
 	Query("SELECT device_id FROM mobile_subscriptions WHERE tag_id IN(16,18,19,20,24,84,157,160,161,173) AND segment = '" + randomHex() + "' GROUP BY device_id")
 }
 
-func QueryAllTenTagsSegmentedGroupedParallel10() {
-	QueryParallel(10, "SELECT device_id FROM mobile_subscriptions WHERE tag_id IN(16,18,19,20,24,84,157,160,161,173) AND segment = '" + randomHex() + "' GROUP BY device_id")
+func QueryAllTenTagsSegmentedGroupedParallel(x int) {
+	QueryParallel(x, "SELECT device_id FROM mobile_subscriptions WHERE tag_id IN(16,18,19,20,24,84,157,160,161,173) AND segment = '" + randomHex() + "' GROUP BY device_id")
 }
 
 func QueryAllTenTagsTwoSegmentsGrouped() {
 	Query("SELECT device_id FROM mobile_subscriptions WHERE tag_id IN(16,18,19,20,24,84,157,160,161,173) AND segment IN('" + randomHex() + "','" + randomHex() + "') GROUP BY device_id")
+}
+
+//
+
+func QueryAllTenTagsSharded() {
+	Query("SELECT device_id FROM mobile_subscriptions_3d WHERE tag_id IN(16,18,19,20,24,84,157,160,161,173)")
+}
+
+func QueryAllTenTagsShardedParallel(x int) {
+	QueryParallel(x, "SELECT device_id FROM mobile_subscriptions_3d WHERE tag_id IN(16,18,19,20,24,84,157,160,161,173)")
+}
+
+func QueryAllTenTagsShardedDistinct() {
+	Query("SELECT DISTINCT device_id FROM mobile_subscriptions_3d WHERE tag_id IN(16,18,19,20,24,84,157,160,161,173)")
+}
+
+func QueryAllTenTagsShardedGrouped() {
+	Query("SELECT device_id FROM mobile_subscriptions_3d WHERE tag_id IN(16,18,19,20,24,84,157,160,161,173) GROUP BY device_id")
+}
+
+func QueryAllTenTagsShardedGroupedParallel(x int) {
+	QueryParallel(x, "SELECT device_id FROM mobile_subscriptions_3d WHERE tag_id IN(16,18,19,20,24,84,157,160,161,173) GROUP BY device_id")
 }
 
 //

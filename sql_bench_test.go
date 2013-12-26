@@ -104,7 +104,13 @@ func BenchmarkQueryAllFourTagsSegmented(b *testing.B) {
 
 func BenchmarkQueryAllFourTagsSegmentedParallel10(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		QueryAllFourTagsSegmentedParallel10()
+		QueryAllFourTagsSegmentedParallel(10)
+	}
+}
+
+func BenchmarkQueryAllFourTagsSegmentedParallel100(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllFourTagsSegmentedParallel(100)
 	}
 }
 
@@ -122,7 +128,13 @@ func BenchmarkQueryAllFourTagsSegmentedGrouped(b *testing.B) {
 
 func BenchmarkQueryAllFourTagsSegmentedGroupedParallel10(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		QueryAllFourTagsSegmentedGroupedParallel10()
+		QueryAllFourTagsSegmentedGroupedParallel(10)
+	}
+}
+
+func BenchmarkQueryAllFourTagsSegmentedGroupedParallel100(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllFourTagsSegmentedGroupedParallel(100)
 	}
 }
 
@@ -148,7 +160,13 @@ func BenchmarkQueryAllFourTagsSharded(b *testing.B) {
 
 func BenchmarkQueryAllFourTagsShardedParallel10(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		QueryAllFourTagsShardedParallel10()
+		QueryAllFourTagsShardedParallel(10)
+	}
+}
+
+func BenchmarkQueryAllFourTagsShardedParallel100(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllFourTagsShardedParallel(100)
 	}
 }
 
@@ -160,7 +178,13 @@ func BenchmarkQueryAllFourTagsShardedDistinct(b *testing.B) {
 
 func BenchmarkQueryAllFourTagsShardedDistinctParallel10(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		QueryAllFourTagsShardedDistinctParallel10()
+		QueryAllFourTagsShardedDistinctParallel(10)
+	}
+}
+
+func BenchmarkQueryAllFourTagsShardedDistinctParallel100(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllFourTagsShardedDistinctParallel(100)
 	}
 }
 
@@ -172,7 +196,13 @@ func BenchmarkQueryAllFourTagsShardedGrouped(b *testing.B) {
 
 func BenchmarkQueryAllFourTagsShardedGroupedParallel10(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		QueryAllFourTagsShardedGroupedParallel10()
+		QueryAllFourTagsShardedGroupedParallel(10)
+	}
+}
+
+func BenchmarkQueryAllFourTagsShardedGroupedParallel100(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllFourTagsShardedGroupedParallel(100)
 	}
 }
 
@@ -181,6 +211,18 @@ func BenchmarkQueryAllFourTagsShardedGroupedParallel10(b *testing.B) {
 func BenchmarkQueryAllTenTagsSegmented(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		QueryAllTenTagsSegmented()
+	}
+}
+
+func BenchmarkQueryAllTenTagsSegmentedParallel10(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllTenTagsSegmentedParallel(10)
+	}
+}
+
+func BenchmarkQueryAllTenTagsSegmentedParallel100(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllTenTagsSegmentedParallel(100)
 	}
 }
 
@@ -198,7 +240,13 @@ func BenchmarkQueryAllTenTagsSegmentedGrouped(b *testing.B) {
 
 func BenchmarkQueryAllTenTagsSegmentedGroupedParallel10(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		QueryAllTenTagsSegmentedGroupedParallel10()
+		QueryAllTenTagsSegmentedGroupedParallel(10)
+	}
+}
+
+func BenchmarkQueryAllTenTagsSegmentedGroupedParallel100(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllTenTagsSegmentedGroupedParallel(100)
 	}
 }
 
@@ -211,5 +259,49 @@ func BenchmarkQueryAllTenTagsTwoSegments(b *testing.B) {
 func BenchmarkQueryAllTenTagsTwoSegmentsGrouped(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		QueryAllTenTagsTwoSegmentsGrouped()
+	}
+}
+
+//
+
+func BenchmarkQueryAllTenTagsSharded(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllTenTagsSharded()
+	}
+}
+
+func BenchmarkQueryAllTenTagsShardedParallel10(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllTenTagsShardedParallel(10)
+	}
+}
+
+func BenchmarkQueryAllTenTagsShardedParallel100(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllTenTagsShardedParallel(100)
+	}
+}
+
+func BenchmarkQueryAllTenTagsShardedDistinct(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllTenTagsShardedDistinct()
+	}
+}
+
+func BenchmarkQueryAllTenTagsShardedGrouped(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllTenTagsShardedGrouped()
+	}
+}
+
+func BenchmarkQueryAllTenTagsShardedGroupedParallel10(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllTenTagsShardedGroupedParallel(10)
+	}
+}
+
+func BenchmarkQueryAllTenTagsShardedGroupedParallel100(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		QueryAllTenTagsShardedGroupedParallel(100)
 	}
 }
